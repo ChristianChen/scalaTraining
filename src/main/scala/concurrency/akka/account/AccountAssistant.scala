@@ -12,7 +12,7 @@ case class Query(name: String)
 case object Report
 
 class AccountAssistant extends Actor with ActorLogging{
-  var accounts: mutable.Map[String, Double] = mutable.Map()
+  private var accounts: mutable.Map[String, Double] = mutable.Map()
 
   override def receive: Receive = {
     case Create(name,balance) => {
