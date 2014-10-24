@@ -2,10 +2,7 @@ package concurrency.future
 
 import java.util.Date
 
-import com.typesafe.scalalogging.slf4j.LazyLogging
-import scala.concurrent._
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.duration._
+import com.typesafe.scalalogging.slf4j.StrictLogging
 
 case class Money(amount: Double)
 
@@ -13,7 +10,7 @@ case class Shoe(brand: String)
 
 case class BasketBall(id: Int)
 
-object 大雄 extends App with LazyLogging {
+object 大雄 extends App with StrictLogging {
   val start = new Date().getTime
   takeCloth()
   val money = takeMoneyFromBank(500)
